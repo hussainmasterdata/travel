@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static 'styles/main_styles.css' %}">
+</head>
+<body style="background-image:url('https://www.tata.com/content/dam/tata/images/careers/desktop/tgip31_banner_desktop_1920x1080.jpg');">
+<h1 style="margin-left : 32%; margin-top:12%; font-size:20px;font-weight: bold;color:black;"><u>ONLINE REGISTRATION</u></h1>
+<form style="margin-left : 20%; margin-bottom:15%;" action="register" method="post">
+    {% csrf_token %}
+    <label style="margin-right : 5.09%; color: black;font-weight: bold;font-size:15px" for="username">User Name</label>
+    <input class="heighttext" type="text" size="35%" name="username" placeholder="User Name"><br>
+    <label style="margin-right : 5.15%; color: black;font-weight: bold;font-size:15px" for="first_name">First Name</label>
+    <input class="heighttext" type="text" size="35%" name="first_name" placeholder="First Name"><br>
+    <label style="margin-right : 5.3%; color: black;font-weight: bold;font-size:15px" for="lastname">Last Name</label>
+    <input class="heighttext" type="text" size="35%" name="last_name" placeholder="Last Name"><br>
+    <label style="margin-right : 8.4%; color: black;font-weight: bold;font-size:15px" for="email">Email</label>
+    <input class="heighttext" type="text" size="35%" name="email" placeholder="Email"><br>
+    <label style="margin-right : 6%; color: black;font-weight: bold;font-size:15px" for="password">Password</label>
+    <input class="heighttext" type="password" size="35%" name="password" placeholder="Password"><br>
+    <label style="margin-right : 0.9%; color: black;font-weight: bold;font-size:15px" for="password1">Confirm Password</label>
+    <input class="heighttext" type="password" size="35%" name="password1" placeholder="Confirm Password"><br>
+    <label style="margin-right : 4.1%; color: black;font-weight: bold;font-size:15px" for="dateofbirth">Date of Birth</label>
+    <input type="date"><br>
+    <label style="margin-right : 7.5%; color: black;font-weight: bold;font-size:15px" for="gender">Gender</label>
+    <input type="radio" name="gender" value="male" > Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other<br>
+    <input type="submit" style="margin-left : 20%;margin-top:1%; font-family:Trebuchet MS ; font-size:15px;">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>

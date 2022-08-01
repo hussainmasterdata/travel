@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'styles/main_styles.css' %}">
+</head>
+<body style="background-image:url('https://www.icsi.edu/media/filer_public/8c/65/8c650152-d3eb-4ef1-888d-b248f20bfe20/student_3.jpg');">
+<h1 style="margin-left : 27%; margin-top:12%; font-size:20px;font-weight: bold;color:white;">Please login to your account</h1>
+<form style="margin-left : 20%; margin-bottom:15%;" action="login" method="post">
+    {% csrf_token %}
+    <label style="margin-right : 1.05%; color: white;font-weight: bold;font-size:15px" for="username">User Name</label>
+    <input class="heighttext" type="text" size="35%" name="username" placeholder="Input your User Name"><br>
+    <label style="margin-right : 1.9%; color: white;font-weight: bold;font-size:15px" for="password">Password</label>
+    <input class="heighttext" type="password" size="35%" name="password" placeholder="Input your Password"><br>
+    <input type="submit" style="margin-left : 12%;margin-top:2%; font-family:Trebuchet MS ; font-size:15px;" value="Login">
+    <input type="checkbox"  checked="checked" name="remember" > Remember me
+
+</form>
+</body>
+</html>
